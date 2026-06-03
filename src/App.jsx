@@ -11,23 +11,26 @@ import { Quiz } from './pages/Quiz';
 import { Progress } from './pages/Progress';
 import { AudioPlayer } from './components/AudioPlayer';
 
+
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
         <AudioProvider>
-          <div className="min-h-screen bg-gray-100 pb-24">
+          <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
             <Navbar />
-            <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route element={<ProtectedRoute />}>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/audio/:id" element={<AudioDetail />} />
-                <Route path="/quiz/:docId" element={<Quiz />} />
-                <Route path="/progress" element={<Progress />} />
-              </Route>
-            </Routes>
+            <div className="pt-16">
+              <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route element={<ProtectedRoute />}>
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/audio/:id" element={<AudioDetail />} />
+                  <Route path="/quiz/:docId" element={<Quiz />} />
+                  <Route path="/progress" element={<Progress />} />
+                </Route>
+              </Routes>
+            </div>
             <AudioPlayer />
           </div>
         </AudioProvider>

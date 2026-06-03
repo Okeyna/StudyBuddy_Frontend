@@ -45,5 +45,6 @@ export const DocumentUploader = ({ onUploadSuccess }) => {
       )}
       {error && <p className="text-red-500 mt-2">{error}</p>}
     </div>
+    
   );
 };
